@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="dataObject"
+            type="info.androidhive.retrofit.model.pojo.DataObject" />
+        <variable name="activity" type="info.androidhive.retrofit.activity.MainActivity" />
+    </data>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rowSeperator"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/rowSeperator"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="1700px"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="0dp"
+            app:titleEnabled="false"
+            android:background="@color/rowSeperator"
+
+            app:title="title">
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/rowSeperator"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/rowSeperator"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/toolbarImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:scaleType="centerCrop"
+                    android:fitsSystemWindows="true"
+                    android:src="@drawable/sample_image"
+                    app:layout_collapseMode="parallax" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{dataObject.meta_data.seo_title}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/margintablerow"
+                    android:layout_marginLeft="@dimen/margintablerow"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{dataObject.content_name}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="@dimen/margintablerow"/>
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/primelogo"
+                    android:layout_marginLeft="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Included with Prime"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10dp"
+                    android:layout_marginLeft="@dimen/margintablerow"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="   Episode 1 Watch Now"
+                    android:textAllCaps="false"
+                    android:textAlignment="textStart"
+                    android:paddingLeft="15px"
+                    android:textColor="@color/colorWhite"
+                    android:drawableLeft="@drawable/play_button"
+                    android:layout_marginLeft="@dimen/margintablerow"
+                    android:layout_marginRight="@dimen/margintablerow"
+                    android:background="#0F79AF"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20px"
+
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="@dimen/margintablerow"
+                        android:layout_marginLeft="@dimen/margintablerow"
+                        android:gravity="center_horizontal">
+                        <ImageButton
+                            android:layout_width="80px"
+                            android:layout_height="70px"
+                            android:background="@drawable/addbutton"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="\n watch List "
+                        android:textSize="10dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="@dimen/margintablerow"
+                        android:layout_marginLeft="@dimen/margintablerow"
+                        android:gravity="center_horizontal">
+                        <ImageButton
+                            android:layout_width="80px"
+                            android:layout_height="80px"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/downloadimg"/>
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                            android:layout_gravity="center_horizontal"
+                        android:text="  Download  \n   Season 2"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/colorWhite"
+    android:layout_margin="@dimen/margintablerow"
+    android:alpha="0.3"></View>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{dataObject.long_description}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="11dp"
+                    android:layout_marginLeft="@dimen/margintablerow"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{dataObject.genrearray[0].name}"
+                    android:textColor="@color/colorGreyLight"
+                    android:textSize="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="@dimen/margintablerow"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="@dimen/margintablerow"
+                    android:layout_marginLeft="@dimen/margintablerow"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text='@{dataObject.released_year+"  "+dataObject.duration+" min" }'
+                        />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.LinearLayoutCompat>
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/rowSeperator"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activity.MainActivity"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Episodes ("+dataObject.content_manager.size()+")"}'
+                    android:clickable="true"
+                    android:textAllCaps="false"
+                    android:onClick="@{(view) -> activity.episodeClick(view)}"
+                    android:background="@color/rowSeperator"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/moreDetailsBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="More Details"
+                    android:textAllCaps="false"
+                    android:onClick="@{(view) -> activity.moredetailsClick(view)}"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/rowSeperator"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <View
+                    android:id="@+id/button1Highlighter"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/colorWhite"
+                    android:layout_weight="1"/>
+                <View
+                    android:id="@+id/button2Highlighter"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movies_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:background="@color/rowSeperator"/>
+
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+</layout>
